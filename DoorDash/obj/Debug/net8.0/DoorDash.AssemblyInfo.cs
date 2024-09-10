@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DoorDash")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+612c5b6ad41b392ef3d033dddaa88e1415671577")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff312df29fe19a3136488ba1e7140e06d4e968a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DoorDash")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DoorDash")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

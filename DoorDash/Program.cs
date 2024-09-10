@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using DoorDash.Models; // Ensure this namespace includes your ApplicationDbContext
+using DoorDash.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers(); // Adds controller services
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Adds database service
 
 var app = builder.Build();
 

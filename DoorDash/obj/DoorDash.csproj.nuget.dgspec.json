@@ -10,11 +10,11 @@
         "projectUniqueName": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
         "projectName": "DoorDash",
         "projectPath": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
-        "packagesPath": "/root/.nuget/packages/",
+        "packagesPath": "/home/nina/.nuget/packages/",
         "outputPath": "/home/nina/work/e-commerce/DoorDash/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/nina/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -41,6 +41,16 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
