@@ -2749,7 +2749,7 @@
     ]
   },
   "packageFolders": {
-    "/home/nina/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2757,11 +2757,11 @@
       "projectUniqueName": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
       "projectName": "DoorDash",
       "projectPath": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
-      "packagesPath": "/home/nina/.nuget/packages/",
+      "packagesPath": "/root/.nuget/packages/",
       "outputPath": "/home/nina/work/e-commerce/DoorDash/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nina/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    container_name: doordash_postgres
+    environment:
+      POSTGRES_USER: Client
+      POSTGRES_PASSWORD: DoorDahPassword
+      POSTGRES_DB: DoorDashDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  migrations:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: my_migrations
+    depends_on:
+      - postgres
+    entrypoint: ["/bin/bash", "entrypoint.sh"]
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Host=postgres;Database=DoorDashDb;Username=Client;Password=DoorDahPassword"
+    volumes:
+      - .:/app
+    working_dir: /app
+
+volumes:
+  postgres_data:

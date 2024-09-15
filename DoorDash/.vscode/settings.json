@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "mydb",
+            "database": "DoorDashDb",
+            "username": "Client",
+            "password": "DoorDashPassword"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "DoorDash",
+            "connectString": "DefaultConnection"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "DoorDash",
+            "connectString": "Host=localhost;Port=5432;Database=DoorDashDb;Username=Client;Password=DoorDahPassword"
+        }
+    ]
+}
