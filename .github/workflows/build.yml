@@ -23,6 +23,13 @@ jobs:
       - name: Build and run the application with docker-compose
         run: docker-compose -f DoorDash/docker-compose.yml up -d --build
 
+      - name: Wait for PostgreSQL to be ready
+        run: |
+            until docker-compose exec db pg_isready -U postgres; do
+              echo "Waiting for PostgreSQL..."
+              sleep 5
+            done
+
       - name: Run migrations
         run: docker-compose exec app dotnet ef database update
 
