@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj": {}
+    "/Users/ninna/Work/e-commerce/DoorDash/DoorDash.csproj": {}
   },
   "projects": {
-    "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj": {
+    "/Users/ninna/Work/e-commerce/DoorDash/DoorDash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
+        "projectUniqueName": "/Users/ninna/Work/e-commerce/DoorDash/DoorDash.csproj",
         "projectName": "DoorDash",
-        "projectPath": "/home/nina/work/e-commerce/DoorDash/DoorDash.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/home/nina/work/e-commerce/DoorDash/obj/",
+        "projectPath": "/Users/ninna/Work/e-commerce/DoorDash/DoorDash.csproj",
+        "packagesPath": "/Users/ninna/.nuget/packages/",
+        "outputPath": "/Users/ninna/Work/e-commerce/DoorDash/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/Users/ninna/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -68,12 +73,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.2, 8.0.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -82,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

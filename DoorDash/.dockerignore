@@ -1,0 +1,33 @@
+# Ignore build directories
+bin/
+obj/
+
+# Ignore Git files
+.git/
+.gitignore
+
+# Ignore IDE-related files
+.vscode/
+.idea/
+
+# Ignore user-specific configurations
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignore NuGet package restore cache
+.nuget/
+
+# Ignore logs, backups, etc.
+*.log
+*.bak
+*.swp
+
+# Ignore Dockerfiles or Docker-related build files
+docker-compose.override.yml
+.dockerignore
+
+# Ignore other system files (e.g., macOS Finder, Windows Thumbs.db)
+.DS_Store
+Thumbs.db

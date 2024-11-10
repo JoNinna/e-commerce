@@ -7,11 +7,11 @@ namespace DoorDash.Models
     public class Customer
     {
         public int CustomerId { get; set; }
-        public string CustomerFirstName { get; set; }
-        public string CustomerLastName { get; set; }
-        public string CustomerEmail { get; set; }
-        public string CustomerPhoneNumber { get; set; }
-        public string CustomerAddress { get; set; }
+        public required string CustomerFirstName { get; set; }
+        public required string CustomerLastName { get; set; }
+        public required string CustomerEmail { get; set; }
+        public required string CustomerPhoneNumber { get; set; }
+        public required string CustomerAddress { get; set; }
 
         // Navigation property, Establishes a one-to-many relationship, where a customer can have multiple orders.
         public List<Order> Orders { get; set; } = new List<Order>();

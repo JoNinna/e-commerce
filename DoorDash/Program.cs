@@ -24,10 +24,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
+#pragma warning disable ASP0014 // Suggest using top level route registrations
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+#pragma warning restore ASP0014 // Suggest using top level route registrations
 
 
 app.MapGet("/DoorDash", () =>
@@ -36,5 +38,5 @@ app.MapGet("/DoorDash", () =>
 .WithName("DoorDashDelivery")
 .WithOpenApi();
 
-app.Run();
+app.Run("http://0.0.0.0:5074");
 

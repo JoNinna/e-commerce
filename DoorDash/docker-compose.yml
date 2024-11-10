@@ -11,19 +11,39 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "Client", "-d", "DoorDashDb"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
 
   migrations:
-    image: mcr.microsoft.com/dotnet/sdk:8.0
+    build:
+      context: .  # The directory with the Dockerfile
+      dockerfile: Dockerfile  # Your existing Dockerfile
     container_name: my_migrations
     depends_on:
       - postgres
-    entrypoint: ["/bin/bash", "entrypoint.sh"]
+    entrypoint: ["/app/entrypoint.sh"]
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: "Host=postgres;Database=DoorDashDb;Username=Client;Password=DoorDahPassword"
     volumes:
       - .:/app
     working_dir: /app
-
+  
+  api:
+    depends_on:
+      - postgres
+      - migrations 
+    build:
+      context: . # The directory containing the Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "5074:5074"            # Map container port 80 to host port 5074
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:5074
+      
 volumes:
   postgres_data:

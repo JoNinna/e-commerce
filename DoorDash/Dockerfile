@@ -1,23 +1,16 @@
 # Use the official ASP.NET runtime as a base image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:8.@sha256:35792ea4ad1db051981f62b313f1be3b46b1f45cadbaa3c288cd0d3056eefb83 AS base
 WORKDIR /app
 EXPOSE 5074
 
-# Use the SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
-COPY . .
-RUN dotnet restore "DoorDash.csproj"
-RUN dotnet build "DoorDash.csproj" -c Release -o /app/build
-
-# Publish the app
-FROM build AS publish
-RUN dotnet publish "DoorDash.csproj" -c Release -o /app/publish
+COPY . ./
+RUN dotnet restore 
+RUN dotnet tool install --global dotnet-ef  
+RUN export PATH="${PATH}:/root/.dotnet/tools"  
+RUN dotnet publish -c Release -o /app/publish
 
 # Final stage: Use the base image to run the app
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:6c4df091e4e531bb93bdbfe7e7f0998e7ced344f54426b7e874116a3dc3233ff AS build
 WORKDIR /app
-COPY --from=publish /app/publish .
-RUN apt-get update && apt-get install -y curl
+COPY --from=base /app/publish .
 ENTRYPOINT ["dotnet", "DoorDash.dll"]
-
