@@ -24,7 +24,8 @@ services:
       dockerfile: Dockerfile  # Your existing Dockerfile
     container_name: my_migrations
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     entrypoint: ["/app/entrypoint.sh"]
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -43,7 +44,8 @@ services:
     ports:
       - "5074:5074"            # Map container port 80 to host port 5074
     environment:
-      - ASPNETCORE_URLS=http://0.0.0.0:5074
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "http://0.0.0.0:5074"
       
 volumes:
   postgres_data:

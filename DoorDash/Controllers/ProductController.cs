@@ -8,6 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DoorDash.Controllers
 {
+    [Route("test")]
+    [ApiController]
+    public class TestController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok("Hello, World!");
+    }
+
     [Route("api/[controller]")] //api endpoint
     [ApiController]
     public class ProductsController : ControllerBase
