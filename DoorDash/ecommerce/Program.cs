@@ -38,5 +38,5 @@ app.MapGet("/DoorDash", () =>
 .WithName("DoorDashDelivery")
 .WithOpenApi();
 
-app.Run("http://0.0.0.0:5074");
+app.Run();
 
