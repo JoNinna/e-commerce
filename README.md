@@ -18,19 +18,17 @@ This project is an e-commerce API for integrating delivery services like Walgree
    - Download AWS CLI
    - Configure AWS CLI
    - Local setup for the project:
-     git clone https://github.com/JoNinna/e-commerce.git
-     cd DoorDash/ecommerce
-     docker-compose up
+     - git clone https://github.com/JoNinna/e-commerce.git
+     - cd DoorDash/ecommerce
+     - docker-compose up
    - Download Terraform
    - Configure AWS Credentials for Terraform
    - AWS deployment using Terraform:
-     terraform init
-     terraform apply
+     - terraform init
+     - terraform apply
 
 5. Key API endpoints:
-   Products:
-    GET /products
-    POST /products
-   Orders:
-    GET /orders
-    POST /orders
+   - GET /products
+   - POST /products
+   - GET /orders
+   - POST /orders
